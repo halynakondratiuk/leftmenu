@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+</head>
+<body class="bg-grey">
+<div id="wrapper">
+    <div class="side-menu" id="side-menu">
+        <section>
+            <div class="container-fluid divfluid">
+                <!-- Menu Section title -->
+                <h4 class="h4style">SoftServe HRMS</h4>
+                <!-- Lable for #showmenu to hide the menu/uncheck the checkbox -->
+                <label class="toggler toggle-menu" onclick="myFunction()"><span class="glyphicon glyphicon-align-justify"></span></label>
+                <!--<label class="toggle toggle-menu"><i class="glyphicon glyphicon-align-justify"></i></label>-->
+            </div>
+
+            <!--Search input-->
+            <div class="row rowmargin">
+                <div id="inputwidth" class="input-group inputgroupstyle">
+                    <input type="text" class="form-control input-search" placeholder="Search...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-navbar" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                        <button class="btn btn-navbar buttoncolor no-button-padding" type="button"><i class="glyphicon glyphicon-bell"></i></button>
+                        <button class="btn btn-navbar buttoncolor no-button-padding" type="button"><i class="glyphicon glyphicon-comment"></i></button>
+                    </span>
+                </div>
+            </div>
+
+            <!--Trainer info-->
+            <div class="input-group inputmargin inputgroupstyle">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 trainer-photo">
+                    <img src="http://www.zoopicture.ru/assets/2009/02/panda1.jpg" class="img-circle img-responsive" role="img" alt="trainer photo">
+                </div>
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                    <h4 class="divh4float">Naffsdfsfsme</h4><img src="http://publikserver.de/images/stories/allesgruen.png" class="styleimg">
+                    <h5 class="divh5clear">Job possition</h5>
+                </div>
+                <span class="input-group-btn">
+                    <button type="button" class="btn spoiler collapsed buttonstyle" data-toggle="collapse" data-target="#user-description"></button>
+                </span>
+            </div>
+            <div class="collapse divpstyle" id="user-description">
+                <p>ddffdf</p>
+            </div>
+
+            <div class="input-group not-dropdown-el inputmargin inputgroupstyle ahover">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h5><a href="#">News</a></h5>
+                </div>
+            </div>
+
+            <div class="input-group dropdown-el inputgroupstyle ahover">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h5><a href="#learning-description" data-toggle="collapse" class="no-decoration">Learning</a></h5>
+                </div>
+                <span class="input-group-btn left-nav-btn ">
+                    <a class="btn spoiler collapsed left-nav-btn" data-toggle="collapse" href="#learning-description"></a>
+                </span>
+            </div>
+            <div class="collapse divulstyle treestyle" id="learning-description">
+                <ul class="tree">
+                    <li><a href="#">Training catalog</a></li>
+                    <li><a href="#">Trainers</a></li>
+                    <li><a href="#">My learning</a></li>
+                </ul>
+            </div>
+
+            <div class="input-group not-dropdown-el inputgroupstyle ahover">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h5><a href="#">Community</a></h5>
+                </div>
+            </div>
+
+            <div class="input-group not-dropdown-el inputgroupstyle ahover">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h5><a href="#">Company</a></h5>
+                </div>
+            </div>
+
+
+            <div class="input-group dropdown-el inputgroupstyle ahover">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h5><a href="#learning-description" data-toggle="collapse" class="no-decoration">Administration</a></h5>
+                </div>
+                <span class="input-group-btn left-nav-btn">
+                    <a class="btn spoiler collapsed left-nav-btn buttonone" data-toggle="collapse" href="#administration-description"></a>
+                </span>
+            </div>
+            <div class="collapse divulstyle" id="administration-description">
+                <p>some text</p>
+            </div>
+            <div id="footer">
+                <label>
+                    <span class="glyphicon glyphicon-off"></span>
+                    Logout
+                </label>
+            </div>
+        </section>
+    </div>
+
+    <!-------main container-------->
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                    <div class="row">
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                            <!---------insert your content------------>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <form class="forms">
+                                <div class="form-group has-feedback">
+                                    <input type="text" class="form-control inputform" placeholder="Search..." >
+                                    <span class="glyphicon glyphicon-search form-control-feedback searchcolor"></span>
+                                </div>
+                            </form>
+                            <div class="bg-rightwhite">
+                                <ul class="lms-categories-tree">
+                                    <li>Category <span class="pull-right">&#9207</span></li>
+                                    <li ng-repeat="category in categories">
+                                        <div class="squaredTwo">
+                                            <input type="checkbox" value="None" id="{{'Category' + $index}}" name="check" ng-model="category.id"/>
+                                            <label for="{{'Category' + $index}}"></label>
+                                        </div>
+                                        <!--<input type="checkbox" ng-model="category.id">-->
+                                        <span ng-class="{'tree-arrow-right': !show[$index], 'tree-arrow-right-down': show[$index]}">&#9205</span>
+                                        <a class="tree-categories" ng-click="toggle($index)">{{category.name}}</a>
+                                        <ul ng-show="show[$index]">
+                                            <li ng-repeat="subcategory in category.subCategories">
+                                                <div class="squaredTwo">
+                                                    <input type="checkbox" value="None" id="{{'subcategory' + $index + category.name}}" name="check" ng-checked="category.id" ng-model="alluncheck"/>
+                                                    <label for="{{'subcategory' + $index + category.name}}"></label>
+                                                </div>
+                                                <!--<input type="checkbox" ng-checked="category.id">-->
+                                                {{ subcategory.name }}
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <hr>
+                                <ul class="lms-categories-tree">
+                                    <li>Target Audience <span class="pull-right">&#9207</span></li>
+                                    <li>
+                                        <div class="squaredTwo">
+                                            <input type="checkbox" value="None" id="{{'Target-Audience' + $index}}" name="check"/>
+                                            <label for="{{'Target-Audience' + $index}}"></label>
+                                        </div>
+                                        <a class="tree-categories">{{category.name}}</a>
+                                    </li>
+                                </ul>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function myFunction() {
+        document.getElementById("wrapper").classList.toggle("side-menu-show");
+    }
+</script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
